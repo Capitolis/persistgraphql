@@ -90,5 +90,5 @@ export function getQueryDocumentKey(
   document: DocumentNode,
   queryTransformers: QueryTransformer[] = [],
 ): string {
-  return print(applyFragmentDefinitionSort(applyQueryTransformers(document, queryTransformers)));
+  return print(applyQueryTransformers(document, queryTransformers));
 }

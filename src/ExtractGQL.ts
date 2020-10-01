@@ -284,7 +284,7 @@ export class ExtractGQL {
     retDocument.definitions = document.definitions.reduce(
       reduceQueryDefinitions,
       ([] as FragmentDefinitionNode[]),
-    ).sort(sortFragmentsByName);
+    );
 
     return retDocument;
   }

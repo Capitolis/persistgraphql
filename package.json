@@ -1,6 +1,6 @@
 {
-  "name": "persistgraphql",
-  "version": "0.3.11",
+  "name": "cptls-persistgraphql",
+  "version": "0.4.2",
   "description": "A build tool for GraphQL projects.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -8,22 +8,22 @@
     "definition": "lib/index.d.ts"
   },
   "scripts": {
-    "pretest": "npm run compile",
+    "pretest": "yarn compile",
     "test": "mocha --reporter spec --full-trace lib/test/tests.js",
-    "posttest": "npm run lint",
+    "posttest": "yarn lint",
     "compile": "tsc",
-    "lint": "tslint -c tslint.json test/**/*.ts; tslint src/**/*.ts"
+    "lint": "tslint -c tslint.json test/**/*.ts; tslint src/**/*.ts",
+    "publish": "yarn compile && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Poincare/apollo-query-whitelisting.git"
+    "url": "git+https://github.com/Capitolis/persistgraphql.git"
   },
-  "author": "Dhaivat Pandya",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/Poincare/persistgraphql/issues"
+    "url": "https://github.com/Capitolis/persistgraphql/issues"
   },
-  "homepage": "https://github.com/Poincare/persistgraphql#readme",
+  "homepage": "https://github.com/Capitolis/persistgraphql#readme",
   "bin": {
     "persistgraphql": "./bin/persistgraphql"
   },
@@ -40,7 +40,7 @@
     "@types/express": "^4.0.35",
     "@types/lodash": "^4.14.63",
     "@types/mocha": "^2.2.41",
-    "@types/node": "^7.0.14",
+    "@types/node": "7.0.14",
     "@types/yargs": "^6.6.0",
     "chai": "^3.5.0",
     "es6-promise": "^4.1.0",
@@ -54,5 +54,8 @@
   "optionalDependencies": {
     "@types/graphql": "^0.9.0",
     "@types/isomorphic-fetch": "0.0.34"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.capitolis.com:8081/repository/cptls-npm/"
   }
 }
